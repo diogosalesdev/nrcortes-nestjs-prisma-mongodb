@@ -21,7 +21,7 @@ export class AppController {
     return this.scheduleService.schedule({ id: id });
   }
 
-  @Get('schedule')
+  @Get('schedules')
   async getSchedules(): Promise<ScheduleModel[]> {
     return this.scheduleService.schedules({});
   }
@@ -51,7 +51,7 @@ export class AppController {
     });
   }
 
-  @Delete('post/:id')
+  @Delete('schedule/:id')
   async deleteSchedule(@Param('id') id: string): Promise<ScheduleModel> {
     return this.scheduleService.eraseSchedule({ id: id });
   }
